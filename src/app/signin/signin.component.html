@@ -10,7 +10,14 @@
                         name="email"
                         [(ngModel)]="email"  
                         type="text" 
-                        placeholder="meu melhor e-mail" />
+                        placeholder="meu melhor e-mail"
+                        appOnBlurTriggerValidationDirective
+                        [format]="emailRegExp"
+                        [errors]="emailErrors" />
+                <span   class="invalid" 
+                        *listElements="emailErrors; let errorMsg of emailErrors">
+                        {{errorMsg}}
+                </span>
             </div>
             <div class="field">
                 <label for="phone" class="fieldText">Telefone</label>
@@ -18,7 +25,15 @@
                         name="phone" 
                         [(ngModel)]="phone"
                         type="text" 
-                        placeholder="meu melhor telefone" />
+                        placeholder="meu melhor telefone"
+                        appOnBlurTriggerValidationDirective
+                        [format]="phoneRegExp"
+                        [errors]="phoneErrors" />
+                <span   class="invalid" 
+                        *listElements="phoneErrors; let errorMsg of phoneErrors">
+                        {{errorMsg}}
+                </span>
+                
             </div>
 
             <hr />
