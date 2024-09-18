@@ -1,0 +1,10 @@
+.field {
+    padding: 5px 5px 5px 5px;
+}
+
+.fieldText {
+    text-align: left;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}

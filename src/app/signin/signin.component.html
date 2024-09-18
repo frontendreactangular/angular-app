@@ -1,0 +1,32 @@
+<div>
+    <div class="pure-form pure-form-stacked">
+        <fieldset>
+            <legend>
+                Para aprender sempre, assine nossa lista de conteúdos gratuíta:
+            </legend>
+            <div class="field">
+                <label for="email" class="fieldText">E-mail</label>
+                <input  id="email" 
+                        name="email"
+                        [(ngModel)]="email"  
+                        type="text" 
+                        placeholder="meu melhor e-mail" />
+            </div>
+            <div class="field">
+                <label for="phone" class="fieldText">Telefone</label>
+                <input  id="phone" 
+                        name="phone" 
+                        [(ngModel)]="phone"
+                        type="text" 
+                        placeholder="meu melhor telefone" />
+            </div>
+
+            <hr />
+            <button type="button" 
+                    class="pure-button pure-button-primary"
+                    (click)="signIn()">
+                Assinar agora!
+            </button>
+        </fieldset>
+    </div>
+</div>
