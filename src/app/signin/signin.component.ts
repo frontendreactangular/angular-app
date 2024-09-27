@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { SigninService } from './services/SigninService';
 import { OnBlurTriggerValidationDirective } from '../utils/directives/on-blur-trigger-validation.directive';
 import { ListElementsDirective } from '../utils/directives/list-elements.directive';
+import { User } from './models/User';
 
 @Component({
   selector: 'app-signin',
@@ -21,13 +22,14 @@ export class SigninComponent {
   @Input() email: string = '';
   @Input() phone: string = '';
 
-  @Output() submittedControl = new EventEmitter<boolean>();
+  @Output() submittedControl = new EventEmitter<User>();
 
   constructor(private svc: SigninService) {}
 
   signIn() {
-    const result = this.svc.signIn({email: this.email, phone: this.phone});
+    const user = {email: this.email, phone: this.phone} as User;
+    const result = this.svc.signIn(user);
     console.log(result);
-    this.submittedControl.emit(true);
+    this.submittedControl.emit(user);
   }
 }
